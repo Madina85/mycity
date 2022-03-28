@@ -1,3 +1,4 @@
+# from attr import fields
 from rest_framework import serializers
 from .models import Proposal
 
@@ -6,3 +7,15 @@ class ProposalListSerialiser(serializers.ModelSerializer):
     class Meta:
         model = Proposal
         fields = ['id', 'title']
+
+
+class ProposalCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Proposal
+        fields = ['title', 'description']
+
+
+class ProposalSerializer(serializers.ModelSerializer):
+     class Meta:
+         model = Proposal
+         fields = ['id', 'title', 'description', 'photo']      
